@@ -1,7 +1,5 @@
 # CRUD de Eventos
 
-![logo](./logo.png)
-
 CRUD de eventos contendo Nome, Idade, Gênero: [Masculino, Feminino, Outro], Categoria: [Organização, Visitante, Parceiro], Endereço Rua, Endereço Bairro, Endereço Cep, Endereço Número ,Endereço Estado e até 5 Telefones com máscara.
 
 [![rubyBadge](https://img.shields.io/badge/Ruby-2.4.10-5a4272)](https://ruby-doc.org/stdlib-2.4.10/)
@@ -28,7 +26,7 @@ bundle install</code></pre>
 
 - [x] Deve ser possível rodar a aplicação;
 - [x] Deve ser possível criar um Participante;
-- [ ] O telefone de um participante deve possuir Máscara;
+- [x] O telefone de um participante deve possuir Máscara;
 - [ ] Deve ser possível Adicionar mais de um telefone a um participante;
 - [ ] Deve ser possível Listar todos os participantes;
 - [ ] Deve ser possível Editar um participante;
