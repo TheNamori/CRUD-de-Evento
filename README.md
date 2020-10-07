@@ -1,4 +1,4 @@
-# CRUD-de-Eventos
+# CRUD de Eventos
 
 ![logo](./logo.png)
 
@@ -26,10 +26,10 @@ bundle install</code></pre>
 
 ## :ballot_box_with_check: To Do List
 
-- [ ] Deve ser possível rodar a aplicação;
-- [ ] Deve ser possível criar um Evento;
-- [ ] O telefone de um evento deve possuir Máscara;
-- [ ] Deve ser possível Adicionar mais de um telefone a um evento;
-- [ ] Deve ser possível Listar todos os eventos;
-- [ ] Deve ser possível Editar um evento;
-- [ ] Deve ser possível Excluir um evento.
+- [x] Deve ser possível rodar a aplicação;
+- [x] Deve ser possível criar um Participante;
+- [ ] O telefone de um participante deve possuir Máscara;
+- [ ] Deve ser possível Adicionar mais de um telefone a um participante;
+- [ ] Deve ser possível Listar todos os participantes;
+- [ ] Deve ser possível Editar um participante;
+- [ ] Deve ser possível Excluir um participante.
