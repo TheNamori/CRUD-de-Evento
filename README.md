@@ -2,7 +2,7 @@
 
 ![logo](./logo.png)
 
-CRUD de eventos contendo Nome, Idade, Sexo, Usuário tipo Organização, Visitante, Parceiro], Endereço Rua, Endereço Bairro, Endereço Cep, Endereço Número ,Endereço Estado e até 5 Telefones com máscara.
+CRUD de eventos contendo Nome, Idade, Gênero: [Masculino, Feminino, Outro], Categoria: [Organização, Visitante, Parceiro], Endereço Rua, Endereço Bairro, Endereço Cep, Endereço Número ,Endereço Estado e até 5 Telefones com máscara.
 
 [![rubyBadge](https://img.shields.io/badge/Ruby-2.4.10-5a4272)](https://ruby-doc.org/stdlib-2.4.10/)
 [![railsBadge](https://img.shields.io/badge/Rails-4.2.11-5a4272)](https://rubygems.org/gems/rails/versions/4.2.11)
@@ -10,7 +10,7 @@ CRUD de eventos contendo Nome, Idade, Sexo, Usuário tipo Organização, Visi
 [![pgBadge](https://img.shields.io/badge/pg-0.20.0-5a4272)](https://rubygems.org/gems/pg/versions/0.20.0)
 [![bootstrapBadge](https://img.shields.io/badge/Bootstrap-4.5.2-5a4272)](https://rubygems.org/gems/bootstrap/versions/4.5.2)
 
-## :zap: Getting started
+## :zap: Getting Started
 
 1. Baixe esse repositório utilizando o comando git clone:
 <pre><code>git clone https://github.com/TheNamori/CyServer.git</code></pre>

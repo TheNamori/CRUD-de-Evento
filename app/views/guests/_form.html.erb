@@ -40,7 +40,7 @@
 </div>
 <div class="field">
   <%= f.label :cep %><br>
-  <%= f.text_field :cep %>
+  <%= f.text_field :cep, class: 'cep'%>
 </div>
 <div class="field">
   <%= f.label :street_number %><br>
@@ -52,7 +52,7 @@
 </div>
 <div class="field">
   <%= f.label :phone %><br>
-  <%= f.text_field :phone %>
+  <%= f.text_field :phone, class: 'phone', id: 'phone' %>
 </div>
 <div class="actions">
   <%= f.submit %>
