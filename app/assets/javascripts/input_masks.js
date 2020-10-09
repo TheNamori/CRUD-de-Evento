@@ -1,9 +1,9 @@
-$(document).ready(function () {
-  $(".cep").mask("99999-999");
-  $(".phone").mask("(99) 9999-99999");
-});
+$(document).on("turbolinks:load", (function () {
+  $(".phone").mask('(99) 9999-99999', { maxlength: 15 })
+  $(".cep").mask("99999-999", { maxlength: 9 });
+}))
 
-// Em Javascript
+//Em Javascript
 // function mask(o, f) {
 //   v_obj = o;
 //   v_fun = f;

@@ -15,6 +15,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-//= require turbolinks
 //= require jquery.mask
+//= require turbolinks
 //= require input_masks
+//= require add_fields
+//= require remove_fields

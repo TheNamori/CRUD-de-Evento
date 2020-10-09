@@ -12,49 +12,54 @@
 <% end %>
 
 <div class="field">
-  <%= f.label :name %><br>
+  <%= f.label :name %>
   <%= f.text_field :name %>
 </div>
 <div class="field">
-  <%= f.label :age %><br>
+  <%= f.label :age %>
   <%= f.number_field :age %>
 </div>
 <div class="field">
-  <%= f.label :gender %><br>
+  <%= f.label :gender %>
   <%= f.collection_select(:gender_id, @gender_selection, :id, 
           :name, {}, class: "form-control form-control-sm", id:'select-gender-#{:name}')%>
 
 </div>
 <div class="field">
-  <%= f.label :category %><br>
+  <%= f.label :category %>
   <%= f.collection_select(:category_id, @category_selection, :id, 
           :name, {}, class: "form-control form-control-sm", id:'select-category-#{:name}')%>
 </div>
 <div class="field">
-  <%= f.label :street %><br>
+  <%= f.label :street %>
   <%= f.text_field :street %>
 </div>
 <div class="field">
-  <%= f.label :neighborhood %><br>
+  <%= f.label :neighborhood %>
   <%= f.text_field :neighborhood %>
 </div>
 <div class="field">
-  <%= f.label :cep %><br>
+  <%= f.label :cep %>
   <%= f.text_field :cep, class: 'cep'%>
 </div>
 <div class="field">
-  <%= f.label :street_number %><br>
+  <%= f.label :street_number %>
   <%= f.number_field :street_number %>
 </div>
 <div class="field">
-  <%= f.label :state %><br>
-  <%= f.text_field :state %>
+  <%= f.label :state %>
+  <%= f.text_field :state, class: 'phone'%>
 </div>
-<div class="field">
-  <%= f.label :phone %><br>
-  <%= f.text_field :phone, class: 'phone', id: 'phone' %>
+
+<div>
+  <%= f.fields_for :phones do |phone_form| %>
+  <%= render "phone_fields", f: phone_form %>
+  <% end %>
+  <%= link_to_add_fields "Add phone", f, :phones %>
 </div>
+
+
 <div class="actions">
-  <%= f.submit %>
+  <%= f.submit class: 'btn border' %>
 </div>
 <% end %>

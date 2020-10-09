@@ -27,7 +27,7 @@ bundle install</code></pre>
 - [x] Deve ser possível rodar a aplicação;
 - [x] Deve ser possível criar um Participante;
 - [x] O telefone de um participante deve possuir Máscara;
-- [ ] Deve ser possível Adicionar mais de um telefone a um participante;
+- [x] Deve ser possível Adicionar mais de um telefone a um participante;
 - [ ] Deve ser possível Listar todos os participantes;
 - [ ] Deve ser possível Editar um participante;
 - [ ] Deve ser possível Excluir um participante.

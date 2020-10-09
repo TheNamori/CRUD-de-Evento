@@ -1,1 +1,24 @@
 "pt-br":
+  activerecord:
+    model:
+      guest:
+        one: "Participante"
+        other: "Participantes"
+    attributes:
+      guest:
+        name: "Nome"
+        age: "Idade"
+        gender: "Gênero"
+        category: "Categoria"
+        street: "Rua"
+        neighborhood: "Bairro"
+        cep: "CEP"
+        street_number: "Número"
+        state: "Estado"
+        phone: "Telefone"
+  helpers:
+    submit:
+      create: "Enviar"
+  back: "Voltar"
+  remove: "Remover"
+  add_phone: "Adicionar Telefone"

@@ -10,7 +10,6 @@ class CreateGuests < ActiveRecord::Migration
       t.string :cep
       t.integer :street_number
       t.string :state
-      t.string :phone
 
       t.timestamps null: false
     end
