@@ -28,6 +28,11 @@ bundle install</code></pre>
 - [x] Deve ser possível criar um Participante;
 - [x] O telefone de um participante deve possuir Máscara;
 - [x] Deve ser possível Adicionar mais de um telefone a um participante;
-- [ ] Deve ser possível Listar todos os participantes;
-- [ ] Deve ser possível Editar um participante;
-- [ ] Deve ser possível Excluir um participante.
+- [x] Não Deve ser possível adicionar mais que cinco telefones a um participante;
+- [x] Deve ser possível Listar todos os participantes;
+- [x] Deve ser possível Editar um participante;
+- [x] Deve ser possível Excluir um participante;
+- [ ] Tela: Adicionar em bootstrap;
+- [ ] Tela: Editar em bootstrap;
+- [ ] Tela: Listar em bootstrap;
+- [ ] Tela: Exibir em bootstrap;

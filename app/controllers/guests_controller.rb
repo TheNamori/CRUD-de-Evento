@@ -27,7 +27,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to @guest, notice: 'Guest was successfully created.' }
+        format.html { redirect_to @guest, notice: 'Participante criado com sucesso!' }
         format.json { render :show, status: :created, location: @guest }
       else
         format.html { render :new }
@@ -41,7 +41,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to @guest, notice: 'Guest was successfully updated.' }
+        format.html { redirect_to @guest, notice: 'Participante editado com sucesso!' }
         format.json { render :show, status: :ok, location: @guest }
       else
         format.html { render :edit }
@@ -55,14 +55,43 @@ class GuestsController < ApplicationController
   def destroy
     @guest.destroy
     respond_to do |format|
-      format.html { redirect_to guests_url, notice: 'Guest was successfully destroyed.' }
+      format.html { redirect_to guests_url, notice: 'Participante excluido com sucesso' }
       format.json { head :no_content }
     end
   end
 
   def selections
     @category_selection = Category.all
-    @gender_selection = Gender.all
+    @gender_selection = %w[Masculino Feminino Outros]
+    @state_selection = %w[
+      Acre
+      Alagoas
+      Amapá
+      Amazonas
+      Bahia
+      Ceará
+      Distrito\ Federal
+      Espírito\ Santo
+      Goiás
+      Maranhão
+      Mato\ Grosso
+      Mato\ Grosso\ do\ Sul
+      Minas\ Gerais
+      Pará
+      Paraíba
+      Paraná
+      Pernambuco
+      Piauí
+      Rio\ de\ Janeiro
+      Rio\ Grande\ do\ Norte
+      Rio\ Grande\ do\ Sul
+      Rondônia
+      Roraima
+      Santa\ Catarina
+      São\ Paulo
+      Sergipe
+      Tocantins
+    ]
   end
 
   private
@@ -76,7 +105,7 @@ class GuestsController < ApplicationController
   def guest_params
     params.require(:guest).permit(:name,
                                   :age,
-                                  :gender_id,
+                                  :gender,
                                   :category_id,
                                   :street,
                                   :neighborhood,

@@ -1,5 +1,3 @@
-<h1>New Guest</h1>
+<h1 class='text-center'><%= t('new') + @guest.model_name.human %></h1>
 
 <%= render 'form' %>
-
-<%= link_to t('back'), guests_path, class: 'btn border' %>

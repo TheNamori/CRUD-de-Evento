@@ -1,8 +1,9 @@
-@import "bootstrap";
-
 * {
-  font-size: 10px;
+  font-size: 14px;
 }
 .user-form {
   background-color: #f7f7f7;
 }
+$primary: #48355b;
+
+@import "bootstrap";

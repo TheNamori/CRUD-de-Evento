@@ -1,7 +1,8 @@
-$(document).on("turbolinks:load", (function () {
-  $(".phone").mask('(99) 9999-99999', { maxlength: 15 })
-  $(".cep").mask("99999-999", { maxlength: 9 });
-}))
+$(document).on('turbolinks:load', function() {
+    $(".phone").mask('(99) 9999-99999', { maxlength: 15 })
+    $(".cep").mask("99999-999", { maxlength: 9 });  
+})
+
 
 //Em Javascript
 // function mask(o, f) {

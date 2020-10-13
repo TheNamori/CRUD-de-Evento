@@ -22,16 +22,10 @@ ActiveRecord::Schema.define(version: 20201007185324) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "genders", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "guests", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
-    t.string   "gender_id"
+    t.string   "gender"
     t.integer  "category_id"
     t.string   "street"
     t.string   "neighborhood"

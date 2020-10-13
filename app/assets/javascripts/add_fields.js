@@ -1,33 +1,44 @@
-
 class addFields {
   constructor() {
-    this.links = document.querySelectorAll('.add_fields')
-    this.iterateLinks()
-  }
+    this.links = document.querySelectorAll('.add_fields');
+    this.iterateLinks();
+  };
 
   iterateLinks() {
-    if (this.links.length === 0) return
+    if (this.links.length === 0) return;
     this.links.forEach(link => {
       link.addEventListener('click', e => {
-        this.handleClick(link, e)
-      })
-    })
-  }
+        this.handleClick(link, e);
+      });
+    });
+  };
 
   handleClick(link, e) {
-    if (!link || !e ) return
-    e.preventDefault()
+    if (!link || !e ) return;
+    e.preventDefault();
 
-    let fieldDelimiter = document.querySelectorAll('.nested-fields').length
-    if(fieldDelimiter < 5){
-      let time = new Date().getTime()
-      let linkId = link.dataset.id
-      let regexp = linkId ? new RegExp(linkId, 'g') : null
-      let newFields = regexp ? link.dataset.fields.replace(regexp, time) : null
-      newFields ? link.insertAdjacentHTML('beforebegin', newFields) : null
+    
+    if(this.addFieldsLimiter){
+      let time = new Date().getTime();
+      let linkId = link.dataset.id;
+      let regexp = linkId ? new RegExp(linkId, 'g') : null;
+      let newFields = regexp ? link.dataset.fields.replace(regexp, time) : null;
+      newFields ? link.insertAdjacentHTML('beforebegin', newFields) : null;
+    } else {
+      alert('Não é possível adicionar mais telefones!')
     }
-    $(".phone").mask('(99) 9999-99999', { maxlength: 15 })
-    $(".cep").mask("99999-999", { maxlength: 9 });
+
+    this.phoneInputMask();
+  }
+
+  get addFieldsLimiter(){
+    const maxGuestPhones = 5;
+    let numberOfCurrentGuestPhones = document.querySelectorAll('.nested-fields').length;
+    return maxGuestPhones > numberOfCurrentGuestPhones;
+  }
+
+  phoneInputMask(){
+    $(".phone").mask('(99) 9999-99999', { maxlength: 15 });
   }
 }
-window.addEventListener('turbolinks:load', () => new addFields())
+window.addEventListener('turbolinks:load', () => new addFields());

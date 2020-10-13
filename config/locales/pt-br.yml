@@ -1,6 +1,6 @@
 "pt-br":
   activerecord:
-    model:
+    models:
       guest:
         one: "Participante"
         other: "Participantes"
@@ -19,6 +19,21 @@
   helpers:
     submit:
       create: "Enviar"
+      update: "Editar"
+  errors:
+    format: "%{message}"
   back: "Voltar"
   remove: "Remover"
   add_phone: "Adicionar Telefone"
+  phone: "Telefone:"
+  list_of: "Lista de "
+  new: "Novo "
+  edit: "Editar "
+  show: "Exibir "
+  destroy: "Excluir "
+  sure?: ! "Tem certeza que deseja excluir o participante: %{guest}"
+  new_guest: "Adicionar Participante"
+  personal_informations: "Informações Pessoais"
+  address: "Endereço"
+  phones: "Telefones"
+  next: "Avançar"

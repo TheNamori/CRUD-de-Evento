@@ -14,9 +14,10 @@
 //= require jquery_ujs
 //= require jquery3
 //= require popper
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require jquery.mask
 //= require turbolinks
-//= require input_masks
+//= require input_mask
 //= require add_fields
 //= require remove_fields
+//= require flash_messages_timeout

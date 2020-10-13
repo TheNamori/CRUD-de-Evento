@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" , class='alert alert-success'><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -12,7 +12,7 @@
 
 <p>
   <strong>Gender:</strong>
-  <%= @guest.gender.name %>
+  <%= @guest.gender %>
 </p>
 
 <p>
@@ -50,5 +50,5 @@
   <%= @guest.state %>
 </p>
 
-<%= link_to 'Edit', edit_guest_path(@guest) %> |
-<%= link_to 'Back', guests_path %>
+<%= link_to t('edit'), edit_guest_path(@guest), class: 'btn border' %>
+<%= link_to t('back'), guests_path, class: 'btn border' %>

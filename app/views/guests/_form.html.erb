@@ -1,65 +1,78 @@
-<%= form_for(@guest) do |f| %>
-<% if @guest.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
-
-  <ul>
-    <% @guest.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="field">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div>
-<div class="field">
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-</div>
-<div class="field">
-  <%= f.label :gender %>
-  <%= f.collection_select(:gender_id, @gender_selection, :id, 
-          :name, {}, class: "form-control form-control-sm", id:'select-gender-#{:name}')%>
-
-</div>
-<div class="field">
-  <%= f.label :category %>
-  <%= f.collection_select(:category_id, @category_selection, :id, 
-          :name, {}, class: "form-control form-control-sm", id:'select-category-#{:name}')%>
-</div>
-<div class="field">
-  <%= f.label :street %>
-  <%= f.text_field :street %>
-</div>
-<div class="field">
-  <%= f.label :neighborhood %>
-  <%= f.text_field :neighborhood %>
-</div>
-<div class="field">
-  <%= f.label :cep %>
-  <%= f.text_field :cep, class: 'cep'%>
-</div>
-<div class="field">
-  <%= f.label :street_number %>
-  <%= f.number_field :street_number %>
-</div>
-<div class="field">
-  <%= f.label :state %>
-  <%= f.text_field :state, class: 'phone'%>
-</div>
-
-<div>
-  <%= f.fields_for :phones do |phone_form| %>
-  <%= render "phone_fields", f: phone_form %>
+<div class='container-fluid bg-primary'>
+  <%= form_for(@guest) do |f| %>
+  <% if @guest.errors.any? %>
+  <div id='error_explanation' class='row justify-content-center'>
+    <div class='alert alert-danger col-5'>
+      <% @guest.errors.full_messages.each do |message| %>
+      <%= message %><br>
+      <% end %>
+    </div>
+  </div>
   <% end %>
-  <%= link_to_add_fields "Add phone", f, :phones %>
-</div>
 
+  <div class='row justify-content-center'>
+    <div class='col-5 text-light'>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='row justify-content-center'>
+    <div class='col-1 text-light'>
+      <%= f.label :age %>
+      <%= f.text_field :age, class: 'form-control' %>
+    </div>
+    <div class='col-2 text-light'>
+      <%= f.label :gender %>
+      <%= f.select :gender, @gender_selection, { include_blank: true }, 
+        class: 'form-control', id:'select-gender'%>
+    </div>
+    <div class='col-2 text-light'>
+      <%= f.label :category %>
+      <%= f.collection_select(:category_id, @category_selection, :id, 
+        :name, {include_blank: true}, class: 'form-control', id:'select-category')%>
+    </div>
+  </div>
+  <div class='row justify-content-center'>
+    <div class='col-2 text-light'>
+      <%= f.label :neighborhood %>
+      <%= f.text_field :neighborhood, class: 'form-control' %>
+    </div>
+    <div class='col-2 text-light'>
+      <%= f.label :state %>
+      <%= f.select :state, @state_selection, { include_blank: true }, class: 'form-control', id:'select-gender'%>
+    </div>
+    <div class='col-1 text-light'>
+      <%= f.label :cep %>
+      <%= f.text_field :cep, class: 'cep form-control'%>
+    </div>
+  </div>
+  <div class='row justify-content-center'>
+    <div class='col-4 text-light'>
+      <%= f.label :street %>
+      <%= f.text_field :street, class: 'form-control' %>
+    </div>
+    <div class='col-1 text-light'>
+      <%= f.label :street_number %>
+      <%= f.number_field :street_number, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='row justify-content-center'>
+    <%= f.fields_for :phones do |phone_form| %>
+    <%= render 'phone_fields', f: phone_form %>
+    <% end %>
 
-<div class="actions">
-  <%= f.submit class: 'btn border' %>
+    <div class='mt-3 mb-3 col-5 text-light'>
+      <%= link_to_add_fields t('add_phone'), f, :phones, class: 'btn border text-light'%>
+    </div>
+
+  </div>
+  <div class='row justify-content-center'>
+    <div class='col-2'>
+      <%= link_to t('back'), guests_path, class: 'btn border text-light' %>
+    </div>
+    <div class='actions col-3 text-right'>
+      <%= f.submit class: 'btn border text-light' %>
+    </div>
+  </div>
 </div>
 <% end %>

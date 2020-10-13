@@ -3,7 +3,7 @@ class CreateGuests < ActiveRecord::Migration
     create_table :guests do |t|
       t.string :name
       t.integer :age
-      t.string :gender_id
+      t.string :gender
       t.integer :category_id
       t.string :street
       t.string :neighborhood
