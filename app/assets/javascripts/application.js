@@ -21,3 +21,4 @@
 //= require add_fields
 //= require remove_fields
 //= require flash_messages_timeout
+//= require input_types

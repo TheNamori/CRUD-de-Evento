@@ -1,78 +1,71 @@
-<div class='container-fluid bg-primary'>
-  <%= form_for(@guest) do |f| %>
+<div class='container-fluid'>
   <% if @guest.errors.any? %>
-  <div id='error_explanation' class='row justify-content-center'>
-    <div class='alert alert-danger col-5'>
+  <div id='error_explanation'>
+    <div class='alert alert-danger'>
       <% @guest.errors.full_messages.each do |message| %>
       <%= message %><br>
       <% end %>
     </div>
   </div>
   <% end %>
-
-  <div class='row justify-content-center'>
-    <div class='col-5 text-light'>
+  <%= form_for(@guest) do |f| %>
+  <div class='row row-cols-3'>
+    <div class='col-12 text-light'>
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
-    </div>
-  </div>
-  <div class='row justify-content-center'>
-    <div class='col-1 text-light'>
-      <%= f.label :age %>
-      <%= f.text_field :age, class: 'form-control' %>
+      <%= f.text_field :name, class: 'form-control', maxlength: 100, type: 'name' %>
     </div>
     <div class='col-2 text-light'>
+      <%= f.label :age %>
+      <%= f.text_field :age, class: 'form-control', type: 'numeric', maxlength: 3 %>
+    </div>
+    <div class='col-5 text-light'>
       <%= f.label :gender %>
       <%= f.select :gender, @gender_selection, { include_blank: true }, 
         class: 'form-control', id:'select-gender'%>
     </div>
-    <div class='col-2 text-light'>
+    <div class='col-5 text-light'>
       <%= f.label :category %>
       <%= f.collection_select(:category_id, @category_selection, :id, 
         :name, {include_blank: true}, class: 'form-control', id:'select-category')%>
     </div>
-  </div>
-  <div class='row justify-content-center'>
-    <div class='col-2 text-light'>
+    <div class='col-5 text-light'>
       <%= f.label :neighborhood %>
-      <%= f.text_field :neighborhood, class: 'form-control' %>
+      <%= f.text_field :neighborhood, class: 'form-control', maxlength: 100, type: 'text'%>
     </div>
-    <div class='col-2 text-light'>
+    <div class='col-5 text-light'>
       <%= f.label :state %>
       <%= f.select :state, @state_selection, { include_blank: true }, class: 'form-control', id:'select-gender'%>
     </div>
-    <div class='col-1 text-light'>
+    <div class='col-2 text-light'>
       <%= f.label :cep %>
       <%= f.text_field :cep, class: 'cep form-control'%>
     </div>
-  </div>
-  <div class='row justify-content-center'>
-    <div class='col-4 text-light'>
+    <div class='col-5 text-light'>
       <%= f.label :street %>
-      <%= f.text_field :street, class: 'form-control' %>
+      <%= f.text_field :street, class: 'form-control', maxlength: 100 %>
     </div>
-    <div class='col-1 text-light'>
+    <div class='col-2 text-light'>
       <%= f.label :street_number %>
-      <%= f.number_field :street_number, class: 'form-control' %>
+      <%= f.text_field :street_number, class: 'form-control', type: 'numeric', maxlength: 10%>
     </div>
   </div>
-  <div class='row justify-content-center'>
+  <div>
     <%= f.fields_for :phones do |phone_form| %>
     <%= render 'phone_fields', f: phone_form %>
     <% end %>
 
-    <div class='mt-3 mb-3 col-5 text-light'>
-      <%= link_to_add_fields t('add_phone'), f, :phones, class: 'btn border text-light'%>
+    <div class='text-light'>
+      <%= link_to_add_fields t('add_phone'), f, :phones, class: 'btn border text-light m-3'%>
     </div>
-
   </div>
-  <div class='row justify-content-center'>
-    <div class='col-2'>
+  <div class='row'>
+    <div class='col-5'>
       <%= link_to t('back'), guests_path, class: 'btn border text-light' %>
     </div>
-    <div class='actions col-3 text-right'>
+    <div class='actions col-7 text-right'>
       <%= f.submit class: 'btn border text-light' %>
     </div>
   </div>
+</div>
 </div>
 <% end %>

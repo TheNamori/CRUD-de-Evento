@@ -1,54 +1,61 @@
-<p id="notice" , class='alert alert-success'><%= notice %></p>
+<div class='container-fluid'>
+  <% unless notice.nil? %>
+  <p id="notice" , class='alert alert-success'><%= notice %></p>
+  <% end %>
+  <%= form_for(@guest) do |f| %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @guest.name %>
-</p>
+  <div class='row row-cols-3'>
+    <div class='col-12 text-light'>
+      <%= f.label :name %>
+      <div class='form-control'><%= @guest.name %></div>
+    </div>
+    <div class='col-2 text-light'>
+      <%= f.label :age %>
+      <div class='form-control'><%= @guest.age %></div>
+    </div>
+    <div class='col-5 text-light'>
+      <%= f.label :gender %>
+      <div class='form-control'><%= @guest.gender %></div>
+    </div>
+    <div class='col-5 text-light'>
+      <%= f.label :category %>
+      <div class='form-control'><%= @guest.category.name %></div>
+    </div>
+    <div class='col-5 text-light'>
+      <%= f.label :neighborhood %>
+      <div class='form-control'><%= @guest.neighborhood %></div>
+    </div>
+    <div class='col-5 text-light'>
+      <%= f.label :state %>
+      <div class='form-control'><%= @guest.state %></div>
+    </div>
+    <div class='col-2 text-light'>
+      <%= f.label :cep %>
+      <div class='form-control'><%= @guest.cep %></div>
+    </div>
+    <div class='col-5 text-light'>
+      <%= f.label :street %>
+      <div class='form-control'><%= @guest.street %></div>
+    </div>
+    <div class='col-2 text-light'>
+      <%= f.label :street_number %>
+      <div class='form-control'><%= @guest.street_number %></div>
+    </div>
+  </div>
+  <div class='text-light col-5'>
+    <% @guest.phones.each do |phone| %>
+    <%= f.label :phone %>
+    <div class='form-control mb-3 '><%= phone.phone %></div>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Age:</strong>
-  <%= @guest.age %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @guest.gender %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @guest.category.name %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @guest.street %>
-</p>
-
-<p>
-  <strong>Neighborhood:</strong>
-  <%= @guest.neighborhood %>
-</p>
-
-<p>
-  <strong>Cep:</strong>
-  <%= @guest.cep %>
-</p>
-
-<p>
-  <strong>Street number:</strong>
-  <%= @guest.street_number %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @guest.state %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @guest.state %>
-</p>
-
-<%= link_to t('edit'), edit_guest_path(@guest), class: 'btn border' %>
-<%= link_to t('back'), guests_path, class: 'btn border' %>
+  <div class='row'>
+    <div class='col-5'>
+      <%= link_to t('back'), guests_path, class: 'btn border text-light' %>
+    </div>
+    <div class='actions col-7 text-right'>
+      <%= link_to t('edit'), edit_guest_path(@guest), class: 'btn border text-light' %>
+    </div>
+  </div>
+</div>
+<% end %>

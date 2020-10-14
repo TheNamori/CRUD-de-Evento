@@ -32,7 +32,7 @@ bundle install</code></pre>
 - [x] Deve ser possível Listar todos os participantes;
 - [x] Deve ser possível Editar um participante;
 - [x] Deve ser possível Excluir um participante;
-- [ ] Tela: Adicionar em bootstrap;
-- [ ] Tela: Editar em bootstrap;
+- [x] Tela: Adicionar em bootstrap;
+- [x] Tela: Editar em bootstrap;
+- [x] Tela: Exibir em bootstrap;
 - [ ] Tela: Listar em bootstrap;
-- [ ] Tela: Exibir em bootstrap;

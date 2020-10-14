@@ -1,4 +1,4 @@
-<% unless notice.? %>
+<% unless notice.nil? %>
 <p id='notice' , class='alert alert-danger'><%= notice %></p>
 <% end %>
 
@@ -28,6 +28,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to t('new_guest'), new_guest_path, class: 'btn border'  %>
+<%= link_to t('new_guest'), new_guest_path, class: 'btn border mt-3'  %>

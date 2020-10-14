@@ -10,12 +10,8 @@ class Guest < ActiveRecord::Base
               message: 'É necessário preencher o campo Nome para criar um Participante.'
             },
             format: {
-              with: /\A[a-zA-Z]+\z/,
+              with: /[A-Za-z _]/,
               message: 'Apenas letras são permitidas no campo Nome.'
-            },
-            length: {
-              maximum: 50,
-              message: 'Não é permitido nomes com mais de 50 caracteres.'
             }
 
   validates :age,
@@ -38,7 +34,7 @@ class Guest < ActiveRecord::Base
               message: 'É necessário preencher o campo Rua para criar um Participante.'
             },
             format: {
-              with: /[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*/,
+              with: /[A-Za-z0-9 _]/,
               message: 'Apenas letras e números são permitidas no campo Rua.'
             }
 
@@ -47,7 +43,7 @@ class Guest < ActiveRecord::Base
               message: 'É necessário preencher o campo Bairro para criar um Participante.'
             },
             format: {
-              with: /[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*/,
+              with: /[A-Za-z0-9 _]/,
               message: 'Apenas letras e números são permitidas no campo Bairro.'
             }
 

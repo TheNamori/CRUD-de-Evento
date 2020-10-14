@@ -20,6 +20,9 @@
     submit:
       create: "Enviar"
       update: "Editar"
+    label:
+      guest:
+        name: "Nome"
   errors:
     format: "%{message}"
   back: "Voltar"
