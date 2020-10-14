@@ -4,6 +4,11 @@
   <% end %>
   <%= form_for(@guest) do |f| %>
 
+  <h1 class='text-center text-light'>
+    <%= @guest.model_name.human + ': ' + @guest.name.split.first + ' ' + 
+      @guest.name.split.last%>
+  </h1>
+
   <div class='row row-cols-3'>
     <div class='col-12 text-light'>
       <%= f.label :name %>
@@ -50,11 +55,8 @@
   </div>
 
   <div class='row'>
-    <div class='col-5'>
-      <%= link_to t('back'), guests_path, class: 'btn border text-light' %>
-    </div>
-    <div class='actions col-7 text-right'>
-      <%= link_to t('edit'), edit_guest_path(@guest), class: 'btn border text-light' %>
+    <div class='col'>
+      <%= link_to t('back'), guests_path, class: 'btn border text-light mt-3' %>
     </div>
   </div>
 </div>

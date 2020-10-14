@@ -1,3 +1,6 @@
-<h1 class='text-center text-light'><%= t('edit') + @guest.model_name.human %></h1>
+<h1 class='text-center text-light'>
+  <%= t('edit') + @guest.model_name.human + ': ' + @guest.name.split.first + 
+    ' ' + @guest.name.split.last %>
+</h1>
 
-<%= render 'form' %>
+<%= render 'form', guest: @guest %>

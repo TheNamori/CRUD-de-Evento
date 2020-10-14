@@ -9,63 +9,62 @@
   </div>
   <% end %>
   <%= form_for(@guest) do |f| %>
-  <div class='row row-cols-3'>
-    <div class='col-12 text-light'>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control', maxlength: 100, type: 'name' %>
+  <div class='row row-cols-3' id='form'>
+    <div class='col-12 text-light' id='form-name'>
+      <%= f.label :name, id:'label-name'%>
+      <%= f.text_field :name, class: 'form-control', maxlength: 100, type: 'name', id:'input-name' %>
     </div>
     <div class='col-2 text-light'>
-      <%= f.label :age %>
-      <%= f.text_field :age, class: 'form-control', type: 'numeric', maxlength: 3 %>
+      <%= f.label :age, id:'label-age' %>
+      <%= f.text_field :age, class: 'form-control', type: 'numeric', maxlength: 3, id:'input-age' %>
     </div>
     <div class='col-5 text-light'>
-      <%= f.label :gender %>
+      <%= f.label :gender, id:'label-gender' %>
       <%= f.select :gender, @gender_selection, { include_blank: true }, 
         class: 'form-control', id:'select-gender'%>
     </div>
     <div class='col-5 text-light'>
-      <%= f.label :category %>
+      <%= f.label :category, id:'label-category' %>
       <%= f.collection_select(:category_id, @category_selection, :id, 
         :name, {include_blank: true}, class: 'form-control', id:'select-category')%>
     </div>
     <div class='col-5 text-light'>
-      <%= f.label :neighborhood %>
-      <%= f.text_field :neighborhood, class: 'form-control', maxlength: 100, type: 'text'%>
+      <%= f.label :neighborhood, id:'label-neighborhood' %>
+      <%= f.text_field :neighborhood, class: 'form-control', maxlength: 100, type: 'text', id:'input-neighborhood'%>
     </div>
     <div class='col-5 text-light'>
-      <%= f.label :state %>
+      <%= f.label :state, id:'label-state' %>
       <%= f.select :state, @state_selection, { include_blank: true }, class: 'form-control', id:'select-gender'%>
     </div>
     <div class='col-2 text-light'>
-      <%= f.label :cep %>
-      <%= f.text_field :cep, class: 'cep form-control'%>
+      <%= f.label :cep, id:'label-cep' %>
+      <%= f.text_field :cep, class: 'cep form-control', type: 'numeric', id:'input-cep'%>
     </div>
     <div class='col-5 text-light'>
-      <%= f.label :street %>
-      <%= f.text_field :street, class: 'form-control', maxlength: 100 %>
+      <%= f.label :street, id:'label-street' %>
+      <%= f.text_field :street, class: 'form-control', maxlength: 100, id:'input-street' %>
     </div>
     <div class='col-2 text-light'>
-      <%= f.label :street_number %>
-      <%= f.text_field :street_number, class: 'form-control', type: 'numeric', maxlength: 10%>
+      <%= f.label :street_number, id:'label-street_number' %>
+      <%= f.text_field :street_number, class: 'form-control', type: 'numeric', maxlength: 10, id:'input-street_number' %>
     </div>
   </div>
-  <div>
+  <div id='div-phones'>
     <%= f.fields_for :phones do |phone_form| %>
     <%= render 'phone_fields', f: phone_form %>
     <% end %>
 
     <div class='text-light'>
-      <%= link_to_add_fields t('add_phone'), f, :phones, class: 'btn border text-light m-3'%>
+      <%= link_to_add_fields t('add_phone'), f, :phones, class: 'btn border text-light m-3', id:'btn-add_fields'%>
     </div>
   </div>
-  <div class='row'>
-    <div class='col-5'>
-      <%= link_to t('back'), guests_path, class: 'btn border text-light' %>
+  <div class='row' id='actions'>
+    <div class='col-5' id='div-back'>
+      <%= link_to t('back'), guests_path, class: 'btn border text-light', id:'back' %>
     </div>
-    <div class='actions col-7 text-right'>
-      <%= f.submit class: 'btn border text-light' %>
+    <div class='col-7 text-right' id='div-submit'>
+      <%= f.submit class: 'btn border text-light', id:'submit' %>
     </div>
   </div>
-</div>
 </div>
 <% end %>

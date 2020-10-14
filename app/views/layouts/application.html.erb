@@ -9,12 +9,12 @@
 </head>
 
 <body>
-  <div class='bg-light d-flex justify-content-center align-items-center vh-100'>
-    <div class='container p-0 bg-primary rounded min-h-50'>
-      <%= render 'layouts/navigation' %>
-      <div class='p-3 content'>
-        <%= yield %>
-      </div>
+  <div class='container-fluid p-0 bg-primary rounded vh-100'>
+    <div id='navbar'>
+      <%= render 'layouts/navbar' %>
+    </div>
+    <div class='p-3' id='content'>
+      <%= yield %>
     </div>
   </div>
 </body>

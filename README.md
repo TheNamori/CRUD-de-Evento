@@ -35,4 +35,4 @@ bundle install</code></pre>
 - [x] Tela: Adicionar em bootstrap;
 - [x] Tela: Editar em bootstrap;
 - [x] Tela: Exibir em bootstrap;
-- [ ] Tela: Listar em bootstrap;
+- [x] Tela: Listar em bootstrap;

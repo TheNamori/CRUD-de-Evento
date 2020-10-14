@@ -54,6 +54,10 @@ class Guest < ActiveRecord::Base
             format: {
               with: /[0-9]-/,
               message: 'Apenas números são permitidos no campo CEP.'
+            },
+            length: {
+              minimum: 9,
+              message: 'O CEP deve possuir 9 digitos.'
             }
 
   validates :street_number,

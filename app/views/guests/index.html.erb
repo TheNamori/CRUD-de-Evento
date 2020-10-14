@@ -1,31 +1,36 @@
 <% unless notice.nil? %>
-<p id='notice' , class='alert alert-danger'><%= notice %></p>
+<p id='notice' , class='alert alert-success'><%= notice %></p>
 <% end %>
 
-<h1><%= t('list_of') + @guests.model_name.human(count: @guests.count) %></h1>
+<h1 class='text-light'><%= t('list_of') + @guests.model_name.human(count: @guests.count) %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= @guests.model.human_attribute_name('name') %></th>
-      <th><%= @guests.model.human_attribute_name('category') %></th>
-      <th><%= @guests.model.human_attribute_name('state') %></th>
-      <th colspan='3'></th>
-    </tr>
-  </thead>
+<%= link_to t('new_guest'), new_guest_path, class: 'btn btn-lg border text-light m-2'  %>
+<div class="table-responsive">
 
-  <tbody>
-    <% @guests.each do |guest| %>
-    <tr>
-      <td><%= guest.name %></td>
-      <td><%= p guest.category.name %></td>
-      <td><%= guest.state %></td>
-      <td><%= link_to t('show'), guest, class: 'btn border' %></td>
-      <td><%= link_to t('edit'), edit_guest_path(guest), class: 'btn border' %></td>
-      <td><%= link_to t('destroy'), guest, method: :delete, data: { confirm: t('sure?', guest: guest.name) }, class: 'btn border' %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class='table text-light mt-3'>
+    <thead class='bg-secondary'>
+      <tr>
+        <th scope="col"><%= @guests.model.human_attribute_name('name') %></th>
+        <th scope="col"><%= @guests.model.human_attribute_name('category') %></th>
+        <th scope="col"><%= @guests.model.human_attribute_name('state') %></th>
+        <th scope="col"><%= t('show') %></th>
+        <th scope="col"><%= t('edit') %></th>
+        <th scope="col"><%= t('destroy') %></th>
 
-<%= link_to t('new_guest'), new_guest_path, class: 'btn border mt-3'  %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @guests.each do |guest| %>
+      <tr>
+        <td><%= guest.name %></td>
+        <td><%= p guest.category.name %></td>
+        <td><%= guest.state %></td>
+        <td><%= link_to t('show'), guest, class: 'btn border text-light' %></td>
+        <td><%= link_to t('edit'), edit_guest_path(guest), class: 'btn border text-light' %></td>
+        <td><%= link_to t('destroy'), guest, method: :delete, data: { confirm: t('sure?', guest: guest.name) }, class: 'btn border text-light' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

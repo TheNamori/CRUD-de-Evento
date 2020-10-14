@@ -1,11 +1,11 @@
-class removeFields {
+class RemoveFields {
   constructor() {
     this.iterateLinks()
   }
 
   iterateLinks() {
     document.addEventListener('click', e => {
-      if (e.target && e.target.className == 'remove_fields') {
+      if (e.target && e.target.id == 'remove_fields') {
         this.handleClick(e.target, e)
       }
     })
@@ -18,11 +18,11 @@ class removeFields {
     let deleteField = fieldParent
       ? fieldParent.querySelector('input[type="hidden"]')
       : null
-    console.log(fieldParent.classList.remove('nested-fields'))
     if (deleteField) {
       deleteField.value = 1
       fieldParent.style.display = 'none'
+      fieldParent.classList.remove('nested-fields')
     }
   }
 }
-window.addEventListener('turbolinks:load', () => new removeFields())
+window.addEventListener('turbolinks:load', () => new RemoveFields())
