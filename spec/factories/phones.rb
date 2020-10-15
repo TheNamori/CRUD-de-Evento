@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :phone do
-    phone { "MyString" }
-    guest { nil }
+    phone { '984160601' }
+    guest_id { 1 }
   end
 end
