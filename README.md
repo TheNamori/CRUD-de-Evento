@@ -17,7 +17,7 @@ CRUD de eventos contendo Nome, Idade, Gênero: [Masculino, Feminino, Outro], Cat
 <pre><code>cd CRUD-de-Eventos/
 bundle install</code></pre>
 
-3. Declarar variaveis do ambiente em um arquivo .env:
+3. Declarar variaveis de ambiente em um arquivo .env:
 <pre>
   <code>CRUD-DE-EVENTOS_DATABASE_USERNAME=#{DATABASE USERNAME} 
   CRUD-DE-EVENTOS_DATABASE_PASSWORD=#{DATABASE PASSWORD}</code>
