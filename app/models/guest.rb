@@ -3,14 +3,13 @@ class Guest < ActiveRecord::Base
   has_many :phones, dependent: :destroy
 
   accepts_nested_attributes_for :phones, reject_if: :all_blank, allow_destroy: true
-  validates_associated :phones
 
   validates :name,
             presence: {
               message: 'É necessário preencher o campo Nome para criar um Participante.'
             },
             format: {
-              with: /[A-Za-z _]/,
+              with: /[A-Za-z ]/,
               message: 'Apenas letras são permitidas no campo Nome.'
             }
 
@@ -34,7 +33,7 @@ class Guest < ActiveRecord::Base
               message: 'É necessário preencher o campo Rua para criar um Participante.'
             },
             format: {
-              with: /[A-Za-z0-9 _]/,
+              with: /[A-Za-z0-9 ]/,
               message: 'Apenas letras e números são permitidas no campo Rua.'
             }
 
@@ -43,7 +42,7 @@ class Guest < ActiveRecord::Base
               message: 'É necessário preencher o campo Bairro para criar um Participante.'
             },
             format: {
-              with: /[A-Za-z0-9 _]/,
+              with: /[A-Za-z0-9 ]/,
               message: 'Apenas letras e números são permitidas no campo Bairro.'
             }
 
@@ -57,7 +56,7 @@ class Guest < ActiveRecord::Base
             },
             length: {
               minimum: 9,
-              message: 'O CEP deve possuir 9 digitos.'
+              message: 'O CEP deve possuir 8 digitos.'
             }
 
   validates :street_number,

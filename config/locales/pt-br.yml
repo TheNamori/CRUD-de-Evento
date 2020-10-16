@@ -19,7 +19,7 @@
   helpers:
     submit:
       create: "Enviar"
-      update: "Editar"
+      update: "Salvar"
     label:
       guest:
         name: "Nome"

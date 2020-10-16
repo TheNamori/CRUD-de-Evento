@@ -24,7 +24,7 @@
       <% @guests.each do |guest| %>
       <tr>
         <td><%= guest.name %></td>
-        <td><%= p guest.category.name %></td>
+        <td><%= guest.category.name %></td>
         <td><%= guest.state %></td>
         <td><%= link_to t('show'), guest, class: 'btn border text-light' %></td>
         <td><%= link_to t('edit'), edit_guest_path(guest), class: 'btn border text-light' %></td>

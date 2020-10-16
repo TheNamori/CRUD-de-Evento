@@ -5,8 +5,8 @@
   <%= form_for(@guest) do |f| %>
 
   <h1 class='text-center text-light'>
-    <%= @guest.model_name.human + ': ' + @guest.name.split.first + ' ' + 
-      @guest.name.split.last%>
+    <%= "#{@guest.model_name.human}: #{@guest.name.split.first} "+
+      "#{@guest.name.split.last != @guest.name.split.first ? @guest.name.split.last : ''}" %>
   </h1>
 
   <div class='row row-cols-3'>

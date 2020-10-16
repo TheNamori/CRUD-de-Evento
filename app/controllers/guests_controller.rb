@@ -41,7 +41,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to @guest, notice: 'Participante editado com sucesso!' }
+        format.html { redirect_to guests_path, notice: 'Participante editado com sucesso!' }
         format.json { render :show, status: :ok, location: @guest }
       else
         format.html { render :edit }

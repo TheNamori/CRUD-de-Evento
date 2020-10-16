@@ -1,6 +1,6 @@
 <h1 class='text-center text-light'>
-  <%= t('edit') + @guest.model_name.human + ': ' + @guest.name.split.first + 
-    ' ' + @guest.name.split.last %>
+  <%= t('edit') + "#{@guest.model_name.human}: #{@guest.name.split.first} "+ 
+    "#{@guest.name.split.last != @guest.name.split.first ? @guest.name.split.last : ''}" %>
 </h1>
 
-<%= render 'form', guest: @guest %>
+<%= render 'form' %>
