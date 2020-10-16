@@ -17,10 +17,16 @@ CRUD de eventos contendo Nome, Idade, Gênero: [Masculino, Feminino, Outro], Cat
 <pre><code>cd CRUD-de-Eventos/
 bundle install</code></pre>
 
-3. Configurar Banco de Dados:
+3. Declarar variaveis do ambiente em um arquivo .env:
+<pre>
+  <code>CRUD-DE-EVENTOS_DATABASE_USERNAME=#{DATABASE USERNAME} 
+  CRUD-DE-EVENTOS_DATABASE_PASSWORD=#{DATABASE PASSWORD}</code>
+</pre>
+
+4. Configurar Banco de Dados:
 <pre><code>rake db:create db:migrate db:seed</code></pre>
 
-4. Rode a aplicação `rails server`.
+5. Rode a aplicação `rails server`.
 
 ## :ballot_box_with_check: To Do List
 
