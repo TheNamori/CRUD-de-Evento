@@ -11,7 +11,7 @@ CRUD de eventos contendo Nome, Idade, Gênero: [Masculino, Feminino, Outro], Cat
 ## :zap: Getting Started
 
 1. Baixe esse repositório utilizando o comando git clone:
-<pre><code>git clone https://github.com/TheNamori/CyServer.git</code></pre>
+<pre><code>git clone https://github.com/TheNamori/CRUD-de-Eventos.git</code></pre>
 
 2. Instalar dependências da aplicação:
 <pre><code>cd CRUD-de-Eventos/
